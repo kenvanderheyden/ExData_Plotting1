@@ -45,11 +45,11 @@ plot(Sub_metering_1 ~ DT, data=elPowerCons, type="n", xlab = "", ylab = "Energy 
 lines(Sub_metering_1 ~ DT, data=elPowerCons, type="l", lty=1, col="Black")
 lines(Sub_metering_2 ~ DT, data=elPowerCons, type="l", lty=1, col="Red")
 lines(Sub_metering_3 ~ DT, data=elPowerCons, type="l", lty=1, col="Blue")
-legend("topright",c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),col=c("Black","Red","Blue"), lty=c(1,1,1), cex=0.5, box.lwd = 0)
+legend("topright",c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),col=c("Black","Red","Blue"), lty=c(1,1,1), cex=0.5, box.lwd = 0) # small legend font size (cex) and no legend box (box.lwd)
 
 # sub plot 4 (lower right)
-plot(Global_reactive_power ~ DT, data=elPowerCons, type="l", xlab = "datetime", yaxt="n")
-axis(2,cex.axis=0.8)
+plot(Global_reactive_power ~ DT, data=elPowerCons, type="l", xlab = "datetime", yaxt="n") # don't draw y axis text yet (yaxt) 
+axis(2,cex.axis=0.8) # draw a smaller y axis text to match the image example (0.8) 
 
 # after drawing, copy and save to a png file
 dev.copy(png,'plot4.png')
