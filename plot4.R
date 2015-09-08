@@ -1,4 +1,4 @@
-# plot3.R - generate plot3.png
+# plot4.R - generate plot4.png
 
 # Fix for x axis labels: without this localse setting the labels would appear in Dutch language style. 
 Sys.setlocale("LC_TIME", "en_US.UTF-8")
@@ -34,20 +34,20 @@ elPowerCons$Sub_metering_3 <- as.numeric(elPowerCons$Sub_metering_3)
 # SET plot canvast to 2 by 2 items ! 
 par(mfrow = c(2,2), mar=c(4,4,2,1), oma=c(0,0,2,0))
 
-# plot 1 (upper left)
+# sub plot 1 (upper left)
 plot(Global_active_power ~ DT, data=elPowerCons, type="l", xlab = "", ylab = "Global Active Power")
 
-# plot 2 (upper right)
+# sub plot 2 (upper right)
 plot(Voltage ~ DT, data=elPowerCons, type="l", xlab = "datetime", ylab = "Voltage")
 
-# plot 3 (lower left)
+# sub plot 3 (lower left)
 plot(Sub_metering_1 ~ DT, data=elPowerCons, type="n", xlab = "", ylab = "Energy sub metering") 
 lines(Sub_metering_1 ~ DT, data=elPowerCons, type="l", lty=1, col="Black")
 lines(Sub_metering_2 ~ DT, data=elPowerCons, type="l", lty=1, col="Red")
 lines(Sub_metering_3 ~ DT, data=elPowerCons, type="l", lty=1, col="Blue")
 legend("topright",c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),col=c("Black","Red","Blue"), lty=c(1,1,1), cex=0.5, box.lwd = 0)
 
-# plot 4 (lower right)
+# sub plot 4 (lower right)
 plot(Global_reactive_power ~ DT, data=elPowerCons, type="l", xlab = "datetime", yaxt="n")
 axis(2,cex.axis=0.8)
 
