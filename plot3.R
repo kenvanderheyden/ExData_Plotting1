@@ -43,7 +43,7 @@ legend("topright",c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),col=c("B
 #dev.copy(png,'plot3.png')
 #dev.off()
 
-# Problem with the dev.copy above is that the png file looks diferent than the plot in Rstudio.
+# Problem with the dev.copy above is that the png file looks different than the plot in Rstudio.
 # trying other appoach to get the correct result (same as in Rstudio)
 png('plot3.png')
 plot(Sub_metering_1 ~ DT, data=elPowerCons, type="n", xlab = "", ylab = "Energy sub metering")
